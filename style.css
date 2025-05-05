@@ -1,33 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/sf-mono');
+
+:root {
+    --slider-height: 16px;
+    --slider-width: 16px;
+    --slider-thumb-radius: 20%;
+    --slider-thumb-color: white;
+    --slider-thumb-active: black;
+    --slider-thumb-border: 2px solid black;
+    --slider-focus: 0 0 0 1px #fff, 0 0 0 0rem rgba(110, 110, 110, 0.25); /* increase last number to add focus ring */
+    --slider-track-color: white;
+    --slider-track-radius: 3px;
+}
 
 body {
-    font-family: 'Space Mono', 'Consolas', Courier, monospace
+    font-family: 'SF Mono', 'Consolas', Courier, monospace
 }
 
 .boxed {
-    width: 75vw;
-    margin: auto;
-    border: 3px solid;
-    border-radius: 10px;
-}
-
-#first {
-    margin-top: 2.5rem;
-    padding: 0.3rem 2rem 1rem;
-}
-
-#placeholder {
-    align-items: center;
-    text-align: center;
-    padding: 0.3rem;
-}
-
-#placeholder > h2 {
-    margin: 0;
-}
-
-.boxed > img {
-    max-width: 100%;
-    min-height: 100%;
+    border: 2px solid;
     border-radius: 6px;
+}
+
+.form-range {
+    -webkit-appearance: none;
+    appearance: none;
+    /* fix for FF unable to apply focus style bug  */
+    /* border: 1px solid white;  */
+
+    /*required for proper track sizing in FF*/
+    width: 300px;
+}
+
+.form-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: var(--slider-thumb-border);
+    height: var(--slider-height);
+    width: var(--slider-width);
+    border-radius: var(--slider-thumb-radius);
+    background: var(--slider-thumb-color);
+    margin-top: -4px;
+}
+
+.form-range:focus {
+    outline: none;
+}
+
+.form-range::-moz-range-thumb {
+    border: var(--slider-thumb-border);
+    height: var(--slider-height);
+    width: var(--slider-width);
+    border-radius: var(--slider-thumb-radius);
+    background: var(--slider-thumb-color);
+}
+
+.form-range:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+}
+
+.form-range:focus::-webkit-slider-thumb {
+    box-shadow: var(--slider-focus);
+}
+
+.form-range:focus::-moz-range-thumb {
+    box-shadow: var(--slider-focus);
+}
+
+.form-range::-webkit-slider-thumb:active {
+    background-color: var(--slider-thumb-active);
+}
+
+.form-range::-moz-range-thumb:active {
+    background-color: var(--slider-thumb-active);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    background: var(--slider-track-color);
+    border: 0.2px solid #010101;
+    border-radius: var(--slider-track-radius);
+    width: 100%;
+    height: 7.5px;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-track {
+    background: var(--slider-track-color);
+    border: 0.2px solid #010101;
+    border-radius: var(--slider-track-radius);
+    width: 100%;
+    height: 7.5px;
+    cursor: pointer;
 }

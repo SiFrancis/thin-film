@@ -1,23 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Thin-Film Interference Demo</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+    </head>
 <body>
-    <div class="boxed" id="first">
-        <h1>thin film interference thing</h1>
-        <p>adjust the sliders(? and whatever) to change the input values</p>
-        <p>also there will be thingys for the layers and refractive index adjustment idk</p>
+    <div class="boxed container text-justify w-75 mx-auto my-4 p-4">
+        <h1 class="fw-bold">thin film interference thing</h1>
+        <hr>
+        <p>adjust the sliders to change the input wavelength, adjust the thickness and refractive indices, see if it refracts or not</p>
+        <b>TODO:</b>
+        <ul>
+            <li>film thickness</li>
+            <li>the actual calculations part</li>
+            <li>wavelength to color on slider</li>
+        </ul>
     </div>
-    <br>
-    <br>
-    <div class="boxed" id="placeholder">
-        <h2>placeholder yippee</h2>
-        <img src="https://raw.githubusercontent.com/computationalcore/introduction-to-opencv/master/assets/noidea.jpg" alt="">
+    <div class="boxed container w-75 mx-auto my-3">
+        <div class="row mx-3 mt-4 justify-content-center text-center">
+            <label class="col-lg-2 form-label fw-bold" for="wl">Wavelength</label>
+            <input class="col-lg-6 form-range" type="range" name="wl" id="wl_input" min="380" max="780" style="width: 60%;">
+            <span class="col-md-2" id="wl_val">XXX nm</span>
+        </div>
+        <div class="row mx-3 mt-3 p-3 bg-warning bg-opacity-25 rounded-top border border-2 border-dark border-bottom-0">
+            <span class="col align-bottom">above film</span>
+            <span class="col-md-2">(n=1)</span>
+        </div>
+        <div class="row mx-3 p-3 bg-info bg-opacity-25 border border-2 border-dark border-top-0 border-bottom-0">
+            <span class="col">film layer</span>
+            <span class="col-md-2">(n=1.33)</span>
+        </div>
+        <div class="row mx-3 mb-4 p-3 bg-success bg-opacity-25 rounded-bottom border border-2 border-dark border-top-0">
+            <span class="col">below film</span>
+            <span class="col-md-2">(n=2.5)</span>
+        </div>
     </div>
+    <div class="boxed container w-75 mx-auto p-4">
+        <div class="row">
+            <div class="col">
+                <h2 class="fw-bold">notes</h2>
+                <br>
+                <hr>
+                <p>goofy ass project lol</p>
+                <p>i wanted to do physics related coding stuff but idk if this is a good start??</p>
+                <p>also bootstrap is fun!!! i missed this lol</p>
+            </div>
+            <div class="col">
+                <h2 class="fw-bold">things i learned</h2>
+                <small>(so far)</small>
+                <hr>
+                <ul>
+                    <li>relearned webdev (kindaaa)</li>
+                    <li>bootstrap</li>
+                    <li>hope to learn more js for future stuff</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </body>
 </html>
